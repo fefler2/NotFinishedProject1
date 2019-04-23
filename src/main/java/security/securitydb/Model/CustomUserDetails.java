@@ -6,6 +6,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 
 public class CustomUserDetails extends Users implements UserDetails {
+
+    public CustomUserDetails(final Users users){
+        super(users);
+
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
@@ -13,31 +19,31 @@ public class CustomUserDetails extends Users implements UserDetails {
 
     @Override
     public String getPassword() {
-        return null;
+        return super.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return super.getName();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }
