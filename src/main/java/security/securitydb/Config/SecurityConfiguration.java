@@ -12,7 +12,7 @@ import security.securitydb.repository.UsersRepository;
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 
-    private
+
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
